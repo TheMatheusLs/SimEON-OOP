@@ -1,0 +1,16 @@
+{
+    "NumberOfNodes": 5,
+    "NumberOfSlots": 32,
+    "Links": [
+        {"OriginNode": 0, "DestinationNode":1, "LinkLength": 100000, "NumberOfSections": 2},
+        {"OriginNode": 1, "DestinationNode":0, "LinkLength": 100000, "NumberOfSections": 2},
+        {"OriginNode": 1, "DestinationNode":2, "LinkLength": 100000, "NumberOfSections": 2},
+        {"OriginNode": 2, "DestinationNode":1, "LinkLength": 100000, "NumberOfSections": 2},
+        {"OriginNode": 2, "DestinationNode":3, "LinkLength": 100000, "NumberOfSections": 2},
+        {"OriginNode": 3, "DestinationNode":2, "LinkLength": 100000, "NumberOfSections": 2},
+        {"OriginNode": 3, "DestinationNode":4, "LinkLength": 100000, "NumberOfSections": 2},
+        {"OriginNode": 4, "DestinationNode":3, "LinkLength": 100000, "NumberOfSections": 2},
+        {"OriginNode": 4, "DestinationNode":0, "LinkLength": 100000, "NumberOfSections": 2},
+        {"OriginNode": 0, "DestinationNode":4, "LinkLength": 100000, "NumberOfSections": 2}
+    ]
+}
