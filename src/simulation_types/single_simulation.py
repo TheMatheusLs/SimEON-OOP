@@ -1,12 +1,19 @@
-from src.topology_structure.topology import Topology
-from src.general_classes.aux_functions import topology_full_path
-from src.general_classes.settings import *
 
-class SingleSimulation:
+from src.general_classes.settings import REPORT_FOLDER, TRAFFIC_PATH
+from src.simulation_types.simulation import Simulation
+import numpy as np
+
+class SingleSimulation(Simulation):
     def __init__(self, topology_choise, *args, **kwargs) -> None:
         
-        #Armazena o tipo de topologia usada
-        self.topology_choise = topology_choise
+        # Inicia o classe super 
+        super().__init__(topology_choise)
 
-        # Cria os objetos para cada classe
-        self.topology = Topology(topology_full_path(self.topology_choise), self)
+        with open(f"{REPORT_FOLDER}{self.csv_file_name}", 'w') as result_file:
+            result_file.writelines("laNet,pbReq,HopsMed,netOccupancy\n")
+        
+        self.all_laNet_data = []
+        for laNet in np.linspace(self.definitions.LaNetMin, self.definitions.LaNetMax, self.definitions.Npontos):
+            # Executa a simulação para incrementos da carga selecionada
+            laNet_data = self.simulate(laNet)
+            self.all_laNet_data.append(laNet_data)
